@@ -306,7 +306,7 @@ REM reg query "HKLM\System\CurrentControlSet\Control\Session Manager\Environment
 
 :CHECKJAVA
 ECHO INFO: Checking java installation...
-ECHO DEBUG: JAVA version output (java -d64 -version): 1>>  "%~dp0logs\serverstart.log" 2>&1
+ECHO DEBUG: JAVA version output (java -version): 1>>  "%~dp0logs\serverstart.log" 2>&1
 java -version || GOTO JAVAERROR 1>>  "%~dp0logs\serverstart.log" 2>&1
 
 java -version 2>&1 | %MC_SYS32%\FIND.EXE "1.8"  1>>  "%~dp0logs\serverstart.log" 2>&1
@@ -961,8 +961,8 @@ ECHO DEBUG: MC_SERVER_CRASH_YYYYMMDD=%MC_SERVER_CRASH_YYYYMMDD% 1>>  "%~dp0logs\
 ECHO DEBUG: MC_SERVER_CRASH_HHMMSS=%MC_SERVER_CRASH_HHMMSS% 1>>  "%~dp0logs\serverstart.log" 2>&1
 ECHO DEBUG: Current directory file listing: 1>>  "%~dp0logs\serverstart.log" 2>&1
 DIR 1>>  "%~dp0logs\serverstart.log" 2>&1
-ECHO DEBUG: JAVA version output (java -d64 -version): 1>>  "%~dp0logs\serverstart.log" 2>&1
-java -d64 -version 1>>  "%~dp0logs\serverstart.log" 2>&1
+ECHO DEBUG: JAVA version output (java -version): 1>>  "%~dp0logs\serverstart.log" 2>&1
+java -version 1>>  "%~dp0logs\serverstart.log" 2>&1
 
 REM Clear variables -- probably not necessary since we SETLOCAL but doesn't hurt either
 SET MC_SERVER_MAX_RAM=
